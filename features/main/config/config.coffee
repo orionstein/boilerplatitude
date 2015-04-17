@@ -1,7 +1,7 @@
 
-App = angular
-  .module 'feature'
-  .config( ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
+angular
+  .module 'main'
+  .config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
 
     coreState =
       name: 'core'
@@ -12,11 +12,10 @@ App = angular
     mainState =
       name: 'core.main'
       url: ''
-      template: '<div>Here is the First Feature Page</div>'
+      controller: 'mainController as main'
+      templateUrl: 'features/main/templates/main.template'
 
     $stateProvider.state coreState
     $stateProvider.state mainState
     
-])
-
-module.exports = App
+]
