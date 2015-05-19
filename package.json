@@ -2,6 +2,10 @@
   "name": "boilerplatitude",
   "version": "0.1.1",
   "author": "Orion Free",
+  "repository": {
+    "type": "git",
+	"url": "git@github.com:orionstein/boilerplatitude.git"
+  },
   "devDependencies": {
     "coffeelint": "^1.9.3",
     "coffeelint-stylish": "^0.1.2",
