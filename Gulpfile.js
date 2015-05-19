@@ -3,6 +3,8 @@ var path = require('path');
 
 var run = require('run-sequence');
 
+var del = require('del');
+
 var minifyHTML = require('gulp-minify-html');
 
 var browserify = require('gulp-browserify');
@@ -15,8 +17,6 @@ var jshint = require('gulp-jshint');
 var coffeelint = require('gulp-coffeelint');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-
-var clean = require('gulp-clean');
 
 gulp.task('templates', function() {
   gulp.src('./core/**/*.html')
@@ -55,27 +55,14 @@ gulp.task('coffeelint', function() {
     .pipe(coffeelint.reporter());
 });
 
-gulp.task('clean-files', function() {
-  gulp.src('./target/js/*.js', {
-    read: false
-  })
-    .pipe(clean());
-  gulp.src('./target/css/*.css', {
-    read: false
-  })
-    .pipe(clean());
-  gulp.src('./target/partials/**/**/*.template', {
-    read: false
-  })
-    .pipe(clean());
-  gulp.src('./target/partials/**/*.template', {
-    read: false
-  })
-    .pipe(clean());
-  gulp.src('./target/views/*', {
-    read: false
-  })
-    .pipe(clean());
+gulp.task('clean-files', function(cb) {
+  del([
+    './target/js/*.js',
+    './target/css/*.css',
+    './target/partials/**/**/*.template',
+    './target/partials/**/*.template',
+    './target/views/*'
+  ], cb);
 });
 
 gulp.task('sass', function() {
