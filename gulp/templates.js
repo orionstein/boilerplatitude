@@ -38,7 +38,8 @@ gulp.task('copy-index', function() {
 });
 
 gulp.task('templates', function() {
-  return run('build-templates',
+  return run('clean-templates',
+    'build-templates',
     'copy-index');
 });
 /* ENDREGION */

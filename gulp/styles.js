@@ -39,7 +39,8 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('styles', function() {
-  return run('scss-lint',
+  return run('clean-styles',
+    'scss-lint',
     'sass',
     'minify-css');
 });
