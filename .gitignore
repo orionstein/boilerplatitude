@@ -4,6 +4,5 @@ target/
 .sass-cache/
 dist/
 .DS_Store
-Gemfile.lock
 core/css
 core/js
