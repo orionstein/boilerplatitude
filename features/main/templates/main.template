@@ -1,7 +1,7 @@
 <div class="main content">
   <h1>boilerplatitude</h1>
   <div ng-repeat="feature in main.features">
-    <h2 ui-sref="{{feature.featureState}}">{{feature.featureName}}</h2>
+    <h2 class="pointer" ui-sref="{{feature.featureState}}">{{feature.featureName}}</h2>
     <p>{{feature.featureDescription}}</p>
   </div>
 </div>

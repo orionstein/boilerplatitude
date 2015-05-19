@@ -1,6 +1,6 @@
 <div class="menu">
-    <h3 ui-sref="core.main">&lt; back</h3>
+    <h3 class="pointer" ui-sref="core.main">&lt; back</h3>
   <div ng-repeat="feature in menu.features">
-    <h3 ui-sref="{{feature.featureState}}">{{feature.featureName}}</h3>
+    <h3 class="pointer" ui-sref="{{feature.featureState}}">{{feature.featureName}}</h3>
   </div>
 </div>

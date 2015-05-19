@@ -1,8 +1,23 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../bower_components/normalize-scss/normalize';
 
+$cursor-color: #484C55;
+$h1-color: #008A4B;
+
 body{
     background: #F5F5F5;
+}
+
+h1{
+	color: $h1-color;
+}
+
+.pointer{
+  cursor: pointer;
+  color: $cursor-color;
+  &:hover{
+    color: darken($cursor-color, 15%);
+  }
 }
 
 .main{
