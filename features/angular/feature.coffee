@@ -1,4 +1,4 @@
 App = angular
-  .module 'featureTwo', ['ui.router']
+  .module 'angular', ['ui.router']
 
 require('./config/config')

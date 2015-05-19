@@ -1,20 +1,13 @@
 
 App = angular
-  .module 'featureTwo'
+  .module 'static'
   .config( ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
 
-    coreState =
-      name: 'featureTwo'
-      abstract: 'true'
-      url: '/featureTwo'
-      template: '<ui-view></ui-view>'
-
     mainState =
-      name: 'featureTwo.main'
-      url: ''
-      templateUrl: 'features/featureTwo/templates/main.template'
+      name: 'core.static'
+      url: 'static'
+      templateUrl: 'partials/static/templates/main.template'
 
-    $stateProvider.state coreState
     $stateProvider.state mainState
     
 ])

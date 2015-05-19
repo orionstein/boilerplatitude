@@ -1,20 +1,13 @@
 
 App = angular
-  .module 'featureTwo'
+  .module 'coffee'
   .config( ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
 
-    coreState =
-      name: 'featureTwo'
-      abstract: 'true'
-      url: '/featureTwo'
-      template: '<ui-view></ui-view>'
-
     mainState =
-      name: 'featureTwo.main'
-      url: ''
-      templateUrl: 'features/featureTwo/templates/main.template'
+      name: 'core.coffee'
+      url: 'coffee'
+      templateUrl: 'partials/coffee/templates/main.template'
 
-    $stateProvider.state coreState
     $stateProvider.state mainState
     
 ])
