@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-scss": "~3.0.3"
+    "normalize-scss": "~3.0.3",
+    "bourbon": "~4.2.3"
   }
 }
