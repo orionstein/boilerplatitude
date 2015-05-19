@@ -11,7 +11,7 @@ var tidyOptions = {
 
 /* REGION Cleanup and file deletion */
 gulp.task('clean-templates', function(cb) {
-  del([
+  return del([
     './target/partials/**/**/*.template',
     './target/partials/**/*.template',
     './target/views/*'
@@ -32,13 +32,13 @@ gulp.task('build-templates', function() {
 });
 
 gulp.task('copy-index', function() {
-  gulp.src('./core/views/index.html')
+  return gulp.src('./core/views/index.html')
     .pipe(minifyHTML())
     .pipe(gulp.dest('target/'));
 });
 
 gulp.task('templates', function() {
-  run('build-templates',
+  return run('build-templates',
     'copy-index');
 });
 /* ENDREGION */

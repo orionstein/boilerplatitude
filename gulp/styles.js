@@ -9,7 +9,7 @@ var scsslint = require('gulp-scss-lint');
 
 /* REGION Cleanup and file deletion */
 gulp.task('clean-styles', function(cb) {
-  del([
+  return del([
     './target/css/*.css'
   ], cb);
 });
@@ -39,7 +39,7 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('styles', function() {
-  run('scss-lint',
+  return run('scss-lint',
     'sass',
     'minify-css');
 });
