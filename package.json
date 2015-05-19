@@ -4,6 +4,7 @@
   "author": "Orion Free",
   "devDependencies": {
     "coffeelint": "^1.9.3",
+    "coffeelint-stylish": "^0.1.2",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1",
@@ -15,6 +16,7 @@
     "gulp-minify-html": "^1.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "gulp-scss-lint": "^0.2.0",
     "gulp-uglify": "^1.2.0",
     "run-sequence": "^1.0.2"
   },
