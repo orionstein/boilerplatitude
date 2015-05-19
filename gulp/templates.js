@@ -2,6 +2,12 @@ var gulp = require('gulp');
 var run = require('run-sequence');
 var del = require('del');
 var minifyHTML = require('gulp-minify-html');
+var htmltidy = require('gulp-htmltidy');
+var tidyOptions = {
+  doctype: 'html5',
+  hideComments: true,
+  indent: false
+};
 
 /* REGION Cleanup and file deletion */
 gulp.task('clean-templates', function(cb) {
@@ -16,9 +22,11 @@ gulp.task('clean-templates', function(cb) {
 /* REGION Html and Template Building */
 gulp.task('build-templates', function() {
   gulp.src('./core/**/*.html')
+    .pipe(htmltidy(tidyOptions))
     .pipe(minifyHTML())
     .pipe(gulp.dest('./target'));
   gulp.src('./features/**/*.template')
+    .pipe(htmltidy(tidyOptions))
     .pipe(minifyHTML())
     .pipe(gulp.dest('./target/partials'));
 });
