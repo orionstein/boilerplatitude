@@ -1,8 +1,17 @@
 var gulp = require('gulp');
 var run = require('run-sequence');
+var del = require('del');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var coffeelint = require('gulp-coffeelint');
+
+/* REGION Cleanup and file deletion */
+gulp.task('clean-scripts', function(cb) {
+  del([
+    './target/js/*.js'
+  ], cb);
+});
+/* ENDREGION */
 
 /* REGION Coffeescript validation and conversion */
 gulp.task('coffeelint', function() {
@@ -26,7 +35,8 @@ gulp.task('browsercoffee', function() {
 });
 
 gulp.task('coffee', function() {
-  run('coffeelint',
+  run('clean-scripts',
+    'coffeelint',
     'browsercoffee');
 });
 /* ENDREGION */
