@@ -5,3 +5,7 @@ angular
     class MainCtrl
       @features = featureService.featurelist
   ] 
+  .controller 'menuController', ['featureService', (featureService) ->
+    class MenuCtrl
+      @features = featureService.featurelist
+  ] 

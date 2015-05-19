@@ -1,8 +1,22 @@
+@import '../../bower_components/normalize-scss/normalize';
+
 body{
-  background: #F5F5F5;
+    background: #F5F5F5;
 }
 
-.content{
-  width:720px;
-  margin:auto;
+.main{
+
+    width: 80%;
+    margin: auto;
+
+    .content{
+        width: 75%;
+        display: inline-block;
+    }
+    .menu{
+        width: 25%;
+        display: inline-block;
+    }
+
 }
+
