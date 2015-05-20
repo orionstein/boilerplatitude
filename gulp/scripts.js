@@ -5,7 +5,6 @@ module.exports = function(environment) {
   var jshint = require('gulp-jshint');
   var uglify = require('gulp-uglify');
   var rename = require('gulp-rename');
-  var del = require('del');
   var browserify = require('gulp-browserify');
   var concat = require('gulp-concat');
   var coffeelint = require('gulp-coffeelint');
@@ -14,9 +13,7 @@ module.exports = function(environment) {
 
   /* REGION Cleanup and file deletion */
   gulp.task('clean-scripts', function(cb) {
-    return del([
-      'target/js/*.js'
-    ], cb);
+    return rimraf('target/js', cb);
   });
   /* ENDREGION */
 

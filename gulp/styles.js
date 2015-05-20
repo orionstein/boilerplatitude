@@ -2,18 +2,16 @@ module.exports = function(environment) {
   'use strict';
   var gulp = require('gulp');
   var run = require('run-sequence');
-  var del = require('del');
   var sass = require('gulp-ruby-sass');
   var minifycss = require('gulp-minify-css');
   var rename = require('gulp-rename');
   var scsslint = require('gulp-scss-lint');
+  var rimraf = require('rimraf');
 
 
   /* REGION Cleanup and file deletion */
   gulp.task('clean-styles', function(cb) {
-    return del([
-      './target/css/*.css'
-    ], cb);
+    return rimraf('target/css', cb);
   });
   /* ENDREGION */
 
