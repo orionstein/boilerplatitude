@@ -9,7 +9,8 @@ module.exports = function(environment) {
   var tidyOptions = {
     doctype: 'html5',
     hideComments: true,
-    indent: false
+    indent: false,
+	'new-empty-tags': 'ui-view'
   };
 
   /* REGION Cleanup and file deletion */
