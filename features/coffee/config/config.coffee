@@ -6,7 +6,7 @@ App = angular
     mainState =
       name: 'core.coffee'
       url: 'coffee'
-      templateUrl: 'partials/coffee/templates/main.template'
+      templateUrl: 'partials/coffee/templates/main.template.html'
 
     $stateProvider.state mainState
     

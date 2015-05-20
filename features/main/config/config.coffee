@@ -13,7 +13,7 @@ angular
       name: 'core.main'
       url: ''
       controller: 'mainController as main'
-      templateUrl: 'partials/main/templates/main.template'
+      templateUrl: 'partials/main/templates/main.template.html'
 
 
     pageLayoutState =
@@ -26,7 +26,7 @@ angular
       abstract: true
       views:
           'menu':
-              templateUrl: 'partials/main/templates/menu.template'
+              templateUrl: 'partials/main/templates/menu.template.html'
               controller: 'menuController as menu'
           'main':
               template: '<ui-view></ui-view>'

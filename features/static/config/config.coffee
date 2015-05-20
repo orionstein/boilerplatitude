@@ -6,7 +6,7 @@ App = angular
     mainState =
       name: 'core.sub.page.static'
       url: 'static'
-      templateUrl: 'partials/static/templates/main.template'
+      templateUrl: 'partials/static/templates/main.template.html'
 
     $stateProvider.state mainState
     

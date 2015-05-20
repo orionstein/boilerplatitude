@@ -6,7 +6,7 @@ App = angular
     mainState =
       name: 'core.scss'
       url: 'scss'
-      templateUrl: 'partials/scss/templates/main.template'
+      templateUrl: 'partials/scss/templates/main.template.html'
 
     $stateProvider.state mainState
     
