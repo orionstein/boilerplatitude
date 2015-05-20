@@ -44,7 +44,7 @@ module.exports = function(environment) {
       }))
       .pipe(gulp.dest('build/core'));
   });
-  
+
   gulp.task('preproc-features', function() {
     return gulp.src([
       'features/*.coffee',
@@ -91,11 +91,12 @@ module.exports = function(environment) {
   });
 
   gulp.task('scripts', function() {
-    return run('coffeelint',
+    return run(
       'clean-scripts',
       'clean-temp',
       'preproc-core',
-	  'preproc-features',
+      'preproc-features',
+      'coffeelint',
       'browsercoffee',
       'uglify-scripts',
       'clean-temp');
