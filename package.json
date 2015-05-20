@@ -39,6 +39,7 @@
   "browserify-shim": {
     "jquery": "global:$",
     "angular": "global:angular",
-    "ui-router": "global:ui-router"
+    "ui-router": "global:ui-router",
+	"lodash": "global:_"
   }
 }
