@@ -42,7 +42,7 @@ module.exports = function(environment) {
   });
 
   gulp.task('build-templates-features', function() {
-    return gulp.src('./features/**/*.template')
+    return gulp.src('./features/**/*.html')
       .pipe(preprocess({
         context: process.env
       }))
