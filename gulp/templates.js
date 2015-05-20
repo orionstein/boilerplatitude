@@ -6,10 +6,17 @@ module.exports = function(environment) {
   var htmltidy = require('gulp-htmltidy');
   var preprocess = require('gulp-preprocess');
   var rimraf = require('rimraf');
-  var tidyOptions = {
+  var tidyCoreOptions = {
     doctype: 'html5',
     hideComments: true,
     indent: false,
+	'new-empty-tags': 'ui-view'
+  };
+  var tidyPartialOptions = {
+    doctype: 'html5',
+    hideComments: true,
+    indent: false,
+	'show-body-only': true,
 	'new-empty-tags': 'ui-view'
   };
 
@@ -29,7 +36,7 @@ module.exports = function(environment) {
       .pipe(preprocess({
         context: process.env
       }))
-      .pipe(htmltidy(tidyOptions))
+      .pipe(htmltidy(tidyCoreOptions))
       .pipe(minifyHTML())
       .pipe(gulp.dest('./target'));
   });
@@ -39,7 +46,7 @@ module.exports = function(environment) {
       .pipe(preprocess({
         context: process.env
       }))
-      .pipe(htmltidy(tidyOptions))
+      .pipe(htmltidy(tidyPartialOptions))
       .pipe(minifyHTML())
       .pipe(gulp.dest('./target/partials'));
   });
