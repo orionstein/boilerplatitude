@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "normalize-scss": "~3.0.3",
-    "bourbon": "~4.2.3"
+    "bourbon": "~4.2.3", 
+    "sass-component-library": "git@github.com:artsmc/sass-component-library.git"
   }
 }
