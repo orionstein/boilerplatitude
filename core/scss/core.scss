@@ -1,15 +1,34 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../bower_components/normalize-scss/normalize';
 @import '../../bower_components/sass-component-library/widgets';
-$cursor-color: #484C55;
-$h1-color: #008A4B;
+$cursor-color: #484c55;
+$h1-color: #008a4b;
+
+@font-face{
+  @include font-face("goudy-stg", "fonts/goudystm/GoudyStM-webfont");
+}
+
+@font-face{
+  @include font-face("goudy-stg-italic", "fonts/goudystmitalic/GoudyStM-Italic-webfont", normal, italic);
+}
 
 body{
     background: #F5F5F5;
+  font: 18px/32px 'goudy-stg';
 }
 
 h1{
-	color: $h1-color;
+  color: $h1-color;
+  font-size: 2.5em;
+  line-height: 2em;
+}
+
+h2{
+    font-size: 1.5em;
+}
+
+h3{
+   font-size: 1.25em;
 }
 
 .pointer{
@@ -26,11 +45,11 @@ h1{
     margin: auto;
 
     .content{
-        width: 75%;
+        width: 73%;
         display: inline-block;
     }
     .menu{
-        width: 25%;
+        width: 27%;
         display: inline-block;
     }
 

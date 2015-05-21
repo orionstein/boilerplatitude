@@ -15,6 +15,12 @@ module.exports = function(environment) {
   });
   /* ENDREGION */
 
+
+  gulp.task('copy-fonts', function() {
+    return gulp.src(['core/fonts/**/*'])
+      .pipe(gulp.dest('target/css/fonts/'));
+  });
+
   /* REGION Html and Template Building */
   gulp.task('scss-lint', function() {
     return gulp.src([
@@ -40,6 +46,7 @@ module.exports = function(environment) {
 
   gulp.task('styles', function() {
     return run('clean-styles',
+	  'copy-fonts',
       'scss-lint',
       'sass',
       'minify-css');
