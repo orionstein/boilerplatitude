@@ -6,6 +6,7 @@ module.exports = function(environment) {
   var htmltidy = require('gulp-htmltidy');
   var preprocess = require('gulp-preprocess');
   var rimraf = require('rimraf');
+  var config = require('../package.json');
   var tidyCoreOptions = {
     doctype: 'html5',
     hideComments: true,
@@ -34,7 +35,9 @@ module.exports = function(environment) {
   gulp.task('build-templates-core', function() {
     return gulp.src('./core/**/*.html')
       .pipe(preprocess({
-        context: process.env
+        context: {
+          SCRIPT_FILES: config.script_files.toString()
+        }
       }))
       .pipe(htmltidy(tidyCoreOptions))
       .pipe(minifyHTML())
@@ -43,9 +46,7 @@ module.exports = function(environment) {
 
   gulp.task('build-templates-features', function() {
     return gulp.src('./features/**/*.html')
-      .pipe(preprocess({
-        context: process.env
-      }))
+      .pipe(preprocess())
       .pipe(htmltidy(tidyPartialOptions))
       .pipe(minifyHTML())
       .pipe(gulp.dest('./target/partials'));
