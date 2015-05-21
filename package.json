@@ -7,6 +7,7 @@
     "url": "git@github.com:orionstein/boilerplatitude.git"
   },
   "devDependencies": {
+    "bower": "^1.4.1",
     "coffeelint": "^1.9.3",
     "coffeelint-stylish": "^0.1.2",
     "gulp": "^3.8.11",
@@ -29,7 +30,8 @@
     "browserify": "^9.0.4",
     "browserify-shim": "^3.8.5",
     "coffeeify": "^1.0.0",
-    "gulp-htmltidy": "^0.2.2"
+    "gulp-htmltidy": "^0.2.2",
+    "gulp-sass": "^2.0.1"
   },
   "browserify": {
     "transform": [
@@ -40,6 +42,11 @@
     "jquery": "global:$",
     "angular": "global:angular",
     "ui-router": "global:ui-router",
-	"lodash": "global:_"
+    "lodash": "global:_"
+  },
+  "scripts": {
+    "start": "node ./node_modules/gulp/bin/gulp.js",
+    "bower": "node ./node_modules/bower/bin/bower install ",
+    "development": "node ./node_modules/gulp/bin/gulp.js development"
   }
 }
