@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git@github.com:orionstein/boilerplatitude.git"
   },
-  "devDependencies": {
+  "dependencies": {
     "bower": "^1.4.1",
     "coffeelint": "^1.9.3",
     "coffeelint-stylish": "^0.1.2",
@@ -24,14 +24,13 @@
     "gulp-scss-lint": "^0.2.0",
     "gulp-uglify": "^1.2.0",
     "rimraf": "^2.3.4",
-    "run-sequence": "^1.0.2"
-  },
-  "dependencies": {
+    "run-sequence": "^1.0.2",
     "browserify": "^9.0.4",
     "browserify-shim": "^3.8.5",
     "coffeeify": "^1.0.0",
     "gulp-htmltidy": "^0.2.2",
-    "gulp-sass": "^2.0.1"
+    "gulp-sass": "^2.0.1",
+    "http-server": "^0.8.0"
   },
   "browserify": {
     "transform": [
@@ -51,7 +50,7 @@
     "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"
   ],
   "scripts": {
-    "start": "node ./node_modules/gulp/bin/gulp.js",
+    "start": "bower install --allow-root --config.interactive=false; node ./node_modules/gulp/bin/gulp.js; node ./node_modules/http-server/bin/http-server -p 80 ./target",
     "bower": "node ./node_modules/bower/bin/bower install ",
     "development": "node ./node_modules/gulp/bin/gulp.js development"
   }
