@@ -1,0 +1,10 @@
+server {
+    root /usr/src/app/target;
+    index index.html index.htm;
+
+    server_name localhost orionfree.com;
+
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+}
