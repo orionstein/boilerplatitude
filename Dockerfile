@@ -58,14 +58,13 @@ RUN tce-load -wic coreutils nginx git \
     && sudo npm install -g bower \
     && sudo npm cache clear \
     && cd /usr/src/app \
-    && ls \
     && sudo npm install \
     && sudo bower install --allow-root --config.interactive=false \
     && sudo gulp \
-    && sudo mv /usr/src/app/target /usr/src && \
-    sudo rm -rf /usr/src/app/* && \
-    sudo mv /usr/src/target /usr/src/app && \
-    sudo rm -rf /usr/local/lib/node_modules \
+    && sudo mv /usr/src/app/target /usr/src \
+    && sudo rm -rf /usr/src/app/* \
+    && sudo mv /usr/src/target /usr/src/app \
+    && sudo rm -rf /usr/local/lib/node_modules \
     && sudo rm -rf /tmp/* \
     && sudo rm -rf /usr/local/lib/git-core \
     && sudo rm -rf /root/.npm
@@ -73,7 +72,7 @@ RUN tce-load -wic coreutils nginx git \
 USER root
 RUN sudo su
 
-ADD nginx.conf /usr/local/etc/nginx/nginx.conf
+ADD config/nginx.conf /usr/local/etc/nginx/nginx.conf
 
 COPY config/default /usr/local/etc/nginx/sites-available/default
 
