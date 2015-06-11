@@ -2,7 +2,7 @@ FROM tatsushid/tinycore:6.3-x86_64
 
 # Instructions are run with 'tc' user
 
-RUN tce-load -wic gnupg curl \
+RUN tce-load -wic gnupg curl curl-dev expat2 \
     && rm -rf /tmp/tce/optional/*
 
 # verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
@@ -58,12 +58,12 @@ RUN tce-load -wic coreutils nginx git \
     && sudo npm install -g bower \
     && sudo npm cache clear \
     && cd /usr/src/app \
+    && ls \
     && sudo npm install \
     && sudo bower install --allow-root --config.interactive=false \
     && sudo gulp \
-    && sudo mv /usr/src/app/target /usr/src \
-    && sudo rm -rf /usr/src/app/* \
-    && sudo mv /usr/src/target /usr/src/app \
+    && sudo rm -rf /usr/src/app/node_modules \
+    && sudo rm -rf /usr/src/app/bower_components \
     && sudo rm -rf /usr/local/lib/node_modules \
     && sudo rm -rf /tmp/* \
     && sudo rm -rf /usr/local/lib/git-core \
@@ -72,9 +72,9 @@ RUN tce-load -wic coreutils nginx git \
 USER root
 RUN sudo su
 
-ADD config/nginx.conf /usr/local/etc/nginx/nginx.conf
+ADD .setup/nginx.conf /usr/local/etc/nginx/nginx.conf
 
-COPY config/default /usr/local/etc/nginx/sites-available/default
+COPY .setup/default /usr/local/etc/nginx/sites-available/default
 
 RUN ln -s /usr/local/etc/nginx/sites-available/default /usr/local/etc/nginx/sites-enabled/
 
