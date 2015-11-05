@@ -28,8 +28,7 @@ module.exports = function(environment) {
     return gulp.src([
       'build/core/**/*.coffee',
       'build/features/*.coffee',
-      'build/features/**/*.coffee',
-      'build/features/**/**/*.coffee'
+      'build/features/**/*.coffee'
     ])
       .pipe(coffeelint())
       .pipe(coffeelint.reporter('default'));
@@ -48,8 +47,7 @@ module.exports = function(environment) {
   gulp.task('preproc-features', function() {
     return gulp.src([
       'features/*.coffee',
-      'features/**/*.coffee',
-      'features/**/**/*.coffee'
+      'features/**/*.coffee'
     ])
       .pipe(preprocess({
         context: process.env
